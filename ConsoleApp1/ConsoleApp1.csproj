@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net5.0</TargetFramework>
+		<LangVersion>preview</LangVersion>
+		<Platforms>AnyCPU;x64;x86</Platforms>
+		<TieredCompilation>false</TieredCompilation>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<DefineConstants>TRACE;DECODER;INSTR_INFO;HAS_SPAN;MASM;INTEL;</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+	  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Prefer32Bit>true</Prefer32Bit>
+		<DefineConstants>TRACE;DECODER;INSTR_INFO;HAS_SPAN;MASM;INTEL;</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+	  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	  <Prefer32Bit>true</Prefer32Bit>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<DebugType>full</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="1\**" />
+		<Compile Remove="COMInterop\**" />
+		<Compile Remove="NewFolder\**" />
+		<Compile Remove="_COMInterop\**" />
+		<EmbeddedResource Remove="1\**" />
+		<EmbeddedResource Remove="COMInterop\**" />
+		<EmbeddedResource Remove="NewFolder\**" />
+		<EmbeddedResource Remove="_COMInterop\**" />
+		<None Remove="1\**" />
+		<None Remove="COMInterop\**" />
+		<None Remove="NewFolder\**" />
+		<None Remove="_COMInterop\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="Etw\NativeCallbacks.cs" />
+		<Compile Remove="Etw\PeUtils.cs" />
+		<Compile Remove="Etw\ProcessMemoryReader.cs" />
+		<Compile Remove="Etw\TargetProcess2.cs" />
+		<Compile Remove="Etw\UnmanagedLibrary.cs" />
+		<Compile Remove="JitTracer.cs" />
+		<Compile Remove="TracerStatic.cs" />
+	</ItemGroup>
+
+</Project>
