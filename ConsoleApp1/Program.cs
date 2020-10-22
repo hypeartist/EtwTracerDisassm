@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Text;
 using ConsoleApp1.ClrData;
@@ -10,8 +9,7 @@ using ConsoleApp1.Etw.Packets;
 
 namespace ConsoleApp1
 {
-	[SuppressMessage("ReSharper", "PossibleNullReferenceException")] 
-	unsafe class Program
+	static class Program
 	{
 		private const string OutputFile = @"d:\\ClrTracer_dump.txt";
 
